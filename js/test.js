@@ -45,11 +45,11 @@ function search(day, month, year) {
       document.body.style.backgroundSize = 'cover'
       document.body.style.backdropFilter = 'blur(5px)'
       document.title = `Last picture from Curiosity le ${day}-${month}-${year}`
-      setTimeout(function () {
-        document.getElementById('footer').style.display = "flex";
-        document.getElementById('footer').style.position = "absolute";
-        document.getElementById('footer').style.bottom = 0;
-      }, 1500);
+      // setTimeout(function () {
+      //   document.getElementById('footer').style.display = "flex";
+      //   document.getElementById('footer').style.position = "absolute";
+      //   document.getElementById('footer').style.bottom = 0;
+      // }, 1500);
     }
   })
   .catch(error => console.log(error.message))
