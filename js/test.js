@@ -20,36 +20,23 @@ function search(day, month, year) {
     }
   }
   let date = `${year}-${month}-${day}`;
-  // console.log(date);
   fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=bWdxMIS7efw8hwvaf40hjeezP3VBBairnjziMSMp`)
-  // fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2021-6-29&api_key=bWdxMIS7efw8hwvaf40hjeezP3VBBairnjziMSMp`)
   .then(result => result.json())
   .then(result => {
     if (!result.photos[0]) {
-      // console.log(`Aucune image le ${date} | Test ${date} - 1`);
       search(day -1, month, year)
     }
     else if (result.photos[0]) {
-      // console.log(`Une image le ${date}`);
       document.getElementById('nasaImg').setAttribute('src', `${result.photos[0].img_src}`);
 
-      // console.log('Lien de l\'image : ' + document.getElementById('nasaImg').getAttribute('src'));
-      information = `Rover : ${result.photos[0].rover.name} le ${day}-${month}-${year}`;
+      information = `Rover ${result.photos[0].rover.name} le ${day}-${month}-${year}`;
       document.getElementById('dataImg').innerHTML = `${information} | `;
       let link = document.createElement('a');
       link.href = document.getElementById('nasaImg').getAttribute('src');
       link.download = document.getElementById('nasaImg').getAttribute('src');
       link.textContent = 'Download?'
       document.getElementById('dataImg').appendChild(link);
-      document.body.style.background = 'url(' + document.getElementById('nasaImg').getAttribute('src') +') no-repeat'
-      document.body.style.backgroundSize = 'cover'
-      document.body.style.backdropFilter = 'blur(5px)'
       document.title = `Last picture from Curiosity le ${day}-${month}-${year}`
-      // setTimeout(function () {
-      //   document.getElementById('footer').style.display = "flex";
-      //   document.getElementById('footer').style.position = "absolute";
-      //   document.getElementById('footer').style.bottom = 0;
-      // }, 1500);
     }
   })
   .catch(error => console.log(error.message))
