@@ -1,6 +1,6 @@
 
 // https://api.nasa.gov/ Mars Rover photos
-// Yesterday rover's picture
+// Yesterday rover's picture or later
 // get date of the day
 let myDate = new Date();
 let day = myDate.getDate() - 1; // for yesterday
@@ -43,4 +43,4 @@ function search(day, month, year) {
 }
 search(day, month, year)
 
-// TODO: Gérer les erreurs suite tropd de requêtes
+// TODO: Gérer les erreurs si trops de requêtes
