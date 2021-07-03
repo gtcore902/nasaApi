@@ -19,12 +19,10 @@ h1 {
   margin: 25px auto;
   font-size: 2.2rem;
   text-transform: uppercase;
-  text-shadow: 1px 1px 4px black;
   color: #c0c0aa;
 }
 h2 {
   color: #c0c0aa;
-  text-shadow: 1px 1px 4px black;
 }
 .apiImg {
   margin: 0 auto;
@@ -34,7 +32,6 @@ p#dataImg {
   margin: auto auto 25px auto;
 
   padding: 5px;
-  text-shadow: 1px 1px 4px black;
 }
 img {
   max-height: 60vh;
