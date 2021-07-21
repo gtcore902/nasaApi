@@ -26,7 +26,7 @@ function search(day, month, year, rover, idImg, idPara) {
   .then(result => result.json())
   .then(result => {
     if (!result.photos[0]) {
-      search(day -1, month, year)
+      search(day -1, month, year, rover, idImg, idPara)
     }
     else if (result.photos[0]) {
       document.getElementById(idImg).setAttribute('src', `${result.photos[0].img_src}`);
