@@ -45,5 +45,3 @@ function search(day, month, year, rover, idImg, idPara) {
 
 search(day, month, year, roverCuriosity, 'curiosityImg', 'dataImgCuriosity')
 search(day, month, year, roverPerseverance, 'perseveranceImg', 'dataImgPerseverance')
-
-// TODO: Gérer les erreurs si trops de requêtes
