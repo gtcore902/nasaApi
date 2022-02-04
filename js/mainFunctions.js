@@ -40,7 +40,7 @@ function search(day, month, year, rover, idImg, idPara) {
       document.title = `Last pictures from Mars ${day}-${month}-${year}`
     }
   })
-  .catch(error => console.log(error.message))
+  .catch(error => document.getElementById("contentImg").innerHTML = '<p>Sorry errors on server ... 😕<br /><br />Try again later !</p>')
 }
 
 search(day, month, year, roverCuriosity, 'curiosityImg', 'dataImgCuriosity')
