@@ -22,7 +22,7 @@ function search(day, month, year, rover, idImg, idPara) {
     }
   }
   let date = `${year}-${month}-${day}`;
-  fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&api_key=bWdxMIS7efw8hwvaf40hjeezP3VBBairnjziMSMp`)
+  fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&api_key=bWdxMIS7efw8hwvaf40hjeezP3VBBairnjziMSM`)
   .then(result => result.json())
   .then(result => {
     if (!result.photos[0]) {
