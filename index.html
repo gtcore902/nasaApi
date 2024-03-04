@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>NASA Api : Last picture of the Curiosity rover from Mars</title>
-    <meta name="description" content="Discover the latest image sent by the Curiosity rover from the Mars planet">
+    <meta
+      name="description"
+      content="Discover the latest image sent by the Curiosity rover from the Mars planet"
+    />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-
     <div id="wrapper">
-
-      <header>
-        <h1>Last pictures from Mars</h1>
-        <h2>Last pictures of Curiosity & Perseverance rovers on Mars</h2>
+      <header class="header">
+        <h1 class="header__title header__title--h1">Last pictures from Mars</h1>
+        <h2 class="header__tile header__title--h2">
+          Latest photos sent from the Curiosity & Perseverance rovers on Mars
+        </h2>
       </header>
 
-      <div id="contentImg">
+      <div class="content">
         <div>
-          <img id="curiosityImg" src="./img/mars-space-3d-illustration-min2.jpg" alt="Nasa picture">
-          <p id="dataImgCuriosity"></p>
+          <img
+            class="content__image"
+            id="curiosityImg"
+            src="./img/mars-space-3d-illustration-min2.jpg"
+            alt="Nasa picture"
+          />
+          <p class="content__information--curiosity"></p>
         </div>
         <div>
-          <img id="perseveranceImg" src="./img/mars-space-3d-illustration-min2.jpg" alt="Nasa picture">
-          <p id="dataImgPerseverance"></p>
+          <img
+            class="content__image"
+            id="perseveranceImg"
+            src="./img/mars-space-3d-illustration-min2.jpg"
+            alt="Nasa picture"
+          />
+          <p class="content__information--perseverance"></p>
         </div>
       </div>
 
-      <footer>
+      <footer class="footer">
         <p><a href="https://api.nasa.gov/">Thanks to api.nasa.gov</a></p>
-        <p>Made with 💻 by <a class="madeBy" href="https://gaetantremois.fr">Gaëtan TREMOIS</a> 🚀</p>
+        <p>
+          Made with 💻 by
+          <a href="https://gaetantremois.fr">Gaëtan TREMOIS</a>
+          🚀
+        </p>
         <!-- <p>Icons made by <a href="" title="bqlqn">bqlqn</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p> -->
       </footer>
-
     </div>
 
     <script defer src="./js/mainFunctions.js" charset="utf-8"></script>

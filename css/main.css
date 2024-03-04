@@ -1,47 +1,64 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: black;
-  color: #c0c0aa;
+  color: black;
   text-align: center;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-image: linear-gradient(
+    45deg,
+    hsl(60deg 15% 71%) 0%,
+    hsl(60deg 15% 74%) 11%,
+    hsl(60deg 15% 77%) 22%,
+    hsl(59deg 15% 80%) 33%,
+    hsl(59deg 15% 84%) 44%,
+    hsl(59deg 15% 87%) 56%,
+    hsl(59deg 15% 90%) 67%,
+    hsl(59deg 16% 93%) 78%,
+    hsl(59deg 16% 97%) 89%,
+    hsl(0deg 0% 100%) 100%
+  );
 }
 #wrapper {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: auto;
 }
-#contentImg {
+.content {
   display: flex;
   width: 100%;
   justify-content: center;
 }
-h1 {
-  margin: 25px auto;
+.header__title {
+  margin: 25px 5px;
+  color: black;
+  text-shadow: 1px 1px 1px white;
+}
+.header__title--h1 {
   font-size: 2.2rem;
   text-transform: uppercase;
-  color: #c0c0aa;
 }
-h2 {
-  color: #c0c0aa;
-}
-.apiImg {
+/* .apiImg {
   margin: 0 auto;
-}
-p#dataImgCuriosity, p#dataImgPerseverance {
+} */
+p#dataImgCuriosity,
+p#dataImgPerseverance {
   margin: auto auto 25px auto;
   padding: 5px;
 }
-img {
+.content__image {
   max-height: 60vh;
   max-width: 90vw;
   margin: auto 5px;
   background-color: black;
-  border: solid 1px #c0c0aa;
+  border-radius: 5px;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.content__image:hover {
+  transform: scale(1.05);
 }
 a {
   color: inherit;
@@ -51,7 +68,7 @@ a:visited {
   color: inherit;
 }
 
-footer {
+.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,15 +77,15 @@ footer {
   padding-top: 10px;
   padding-bottom: 10px;
   color: black;
-  background-color:  #c0c0aa;
+  background-color: #c0c0aa;
   border-top: solid 1px grey;
 }
 
 @media all and (max-width: 1450px) {
-  #contentImg {
+  .content {
     flex-direction: column;
   }
-  img {
+  .content__image {
     margin: auto;
   }
 }
