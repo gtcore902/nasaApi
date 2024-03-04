@@ -20,7 +20,7 @@ body {
   );
 }
 #wrapper {
-  /* height: 100vh; */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,14 +40,6 @@ body {
 .header__title--h1 {
   font-size: 2.2rem;
   text-transform: uppercase;
-}
-/* .apiImg {
-  margin: 0 auto;
-} */
-p#dataImgCuriosity,
-p#dataImgPerseverance {
-  margin: auto auto 25px auto;
-  padding: 5px;
 }
 .content__image {
   max-height: 60vh;
