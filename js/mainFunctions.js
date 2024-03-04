@@ -1,14 +1,6 @@
-// https://api.nasa.gov/ Mars Rover photos
-// get date of the day
-let myDate = new Date();
-let day = myDate.getDate() - 1; // for yesterday
-let month = myDate.getMonth() + 1; // January is 0
-let year = myDate.getFullYear();
 let information = '';
-let roverPerseverance = 'perseverance'; // curiosity
-let roverCuriosity = 'curiosity'; // curiosity
-let curiosityImg = document.getElementById('curiosityImg');
-let perseveranceImg = document.getElementById('perseveranceImg');
+let curiosityImg = document.querySelector('.content__image--curiosity');
+let perseveranceImg = document.querySelector('.content__image--perseverance');
 let curiosityInfos = document.querySelector('.content__information--curiosity');
 let perseveranceInfos = document.querySelector(
   '.content__information--perseverance'
@@ -56,8 +48,10 @@ const search = async (
     information = `Rover ${datas.photos[0].rover.name} ${lastDateCaptured}`;
     textContainer.innerHTML = `${information} | `;
     let link = document.createElement('a');
+    link.classList.add('content__information--link');
     link.href = `${datas.photos[0].img_src}`;
     link.textContent = 'Download?';
+    link.setAttribute('download', '');
     textContainer.appendChild(link);
     document.title = `Last pictures from Mars ${lastDateCaptured}`;
   } catch (error) {
