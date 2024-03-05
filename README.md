@@ -16,9 +16,14 @@ Link :point_right: [webpage](https://gtcore902.github.io/nasaApi/)
 
 ## Features
 
-- **getMaxDate()**: This function retrieves the most recent Earth date from which photos exist for the Curiosity and Perseverance rovers.
+The script performs the following actions:
+
+1. Queries NASA's API to retrieve the latest photos of the Curiosity and Perseverance rovers.
+2. Displays the most recent image of each rover.
+3. Displays information about the photo, including the capture date and a download link.
+4. Handles errors and displays an appropriate message if the request fails.
+
 - **search()**: This function searches for the latest photos taken by a rover for a given date. It supports the following parameters:
-  - `lastDateCaptured`: The Earth date from which to search for photos.
   - `rover`: The name of the rover ('curiosity' or 'perseverance').
   - `imageContainer`: The HTML element to display the image.
   - `textContainer`: The HTML element to display information about the photo.

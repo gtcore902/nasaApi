@@ -12,68 +12,39 @@ let perseveranceInfos = document.querySelector(
 );
 let lastPictureFromCuriosity = '';
 let lastPictureFromPerseverance = '';
-let lastDateCaptured = '';
-
-/**
- * Get the most recent Earth date from which photos exist
- */
-const getMaxDate = async () => {
-  try {
-    const response = await fetch(
-      `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=0&api_key=${API_KEY}`
-    );
-    const datas = await response.json();
-    // console.log(datas);
-    lastDateCaptured = datas.photos[0].rover.max_date;
-    search(lastDateCaptured, 'curiosity', curiosityImg, curiosityInfos, 'on');
-    search(
-      lastDateCaptured,
-      'perseverance',
-      perseveranceImg,
-      perseveranceInfos,
-      'and'
-    );
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-getMaxDate();
 
 /**
  * Search last pictures for the last date
- * @param {*} lastDateCaptured
  * @param {*} rover
  * @param {*} imageContainer
  * @param {*} textContainer
+ * @param {*} coordinator
  */
-const search = async (
-  lastDateCaptured,
-  rover,
-  imageContainer,
-  textContainer,
-  coordinator
-) => {
+const search = async (rover, imageContainer, textContainer, coordinator) => {
   try {
     const response = await fetch(
-      `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${lastDateCaptured}&api_key=${API_KEY}`
+      `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/latest_photos?&api_key=${API_KEY}`
     );
-    const datas = await response.json();
-    // console.log(datas);
-    imageContainer.src = `${datas.photos[0].img_src}`;
-    imageContainer.alt = `Last picture from ${rover} on ${lastDateCaptured}`;
-    information = `Rover ${datas.photos[0].rover.name} ${lastDateCaptured}`;
-    textContainer.innerHTML = `${information} | `;
+    let datas = await response.json();
     let link = document.createElement('a');
+    datas = datas.latest_photos;
+    imageContainer.src = `${datas[0].img_src}`;
+    imageContainer.alt = `Last picture from ${rover} on ${datas[0].earth_date}`;
+    let [year, month, day] = datas[0].earth_date.split('-');
+    information = `Rover ${datas[0].rover.name} on ${day}-${month}-${year}`;
+    textContainer.innerHTML = `${information} | `;
     link.classList.add('content__information--link');
-    link.href = `${datas.photos[0].img_src}`;
+    link.href = `${datas[0].img_src}`;
     link.textContent = 'Download?';
     link.setAttribute('download', '');
     textContainer.appendChild(link);
-    document.title += ` ${coordinator} ${lastDateCaptured}`;
+    document.title += ` ${coordinator} ${datas[0].earth_date}`;
   } catch (error) {
     console.error(error);
     document.querySelector('.content').innerHTML =
       '<p>Sorry errors on server ... 😕<br /><br />Try again later !</p>';
   }
 };
+
+search('curiosity', curiosityImg, curiosityInfos, 'on');
+search('perseverance', perseveranceImg, perseveranceInfos, 'and');
