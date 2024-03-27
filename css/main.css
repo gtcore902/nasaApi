@@ -28,10 +28,7 @@ body {
   margin: auto;
 }
 .content {
-  display: flex;
   width: 100%;
-  justify-content: center;
-  align-items: center;
 }
 .header__title {
   margin: 25px 5px;
